@@ -1,15 +1,14 @@
 pipeline {
-    agent any  //Runs this pipeline on any available Jenkins Agent/Node
+    agent any  
 
-    environment {       // Defines Global Environment variables that can be used anywhere in the pipeline
+    environment {       
         REGISTRY = "kiara123"   // Your DockerHub username
         IMAGE_NAME = "myapp"
     }
 
-    stages {  // Group of all pipeline execution steps
-
+    stages { 
         stage('Checkout Code') {
-            steps {  //Actions to perform
+            steps {  
                 git branch: 'main',
                     url: 'https://github.com/Kiaraintellipaat/dd.git'
             }
@@ -17,7 +16,7 @@ pipeline {
 
         stage('Install Dependencies & Run Tests') {
             steps {
-                sh """ //Execute multiple shell commands inside the jenkins agent
+                sh """ 
                     echo "Running tests..."
                     python3 --version
                     python3 - <<EOF
