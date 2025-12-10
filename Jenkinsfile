@@ -11,7 +11,7 @@ pipeline {
         stage('Checkout Code') {
             steps {
                 git branch: 'main',
-                    url: ''
+                    url: 'https://github.com/Kiaraintellipaat/dd.git'
             }
         }
 
