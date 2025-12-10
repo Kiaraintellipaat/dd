@@ -29,8 +29,8 @@ EOF
         stage('Build Docker Image') {
             steps {
                 sh """
-                   sudo docker build -t ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} .
-                   sudo docker tag ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} ${REGISTRY}/${IMAGE_NAME}:latest
+                   docker build -t ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} .
+                   docker tag ${REGISTRY}/${IMAGE_NAME}:${BUILD_NUMBER} ${REGISTRY}/${IMAGE_NAME}:latest
                 """
             }
         }
